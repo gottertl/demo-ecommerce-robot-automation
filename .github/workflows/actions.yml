@@ -20,16 +20,25 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: Configure GUI
+    
+    - name: Prep
       run: |
         curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
         sudo apt-get install -y xvfb ca-certificates net-tools netcat gnupg ffmpeg libgtk-3-0 libgdk-pixbuf2.0-dev libxcomposite-dev libdbus-glib-1-2 libatk-bridge2.0-0 wget libgbm1 libnss3 libxss1 libasound2
         sudo apt-get install -y nodejs
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         rfbrowser init
+    
     - name: Test
       run: |
         robot -d ./logs -v HEADLESS:true tests\
+    
+    - name: Publish Reports
+      uses: actions/upload-artifact@v2
+      with:
+        name: logs folder
+        path: logs

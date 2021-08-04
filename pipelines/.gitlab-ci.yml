@@ -12,3 +12,7 @@ test:
     - sudo pip install -r requirements.txt
     - rfbrowser init
     - robot -d ./logs tests\
+  artifacts:
+    when: always
+    paths:
+      - logs/*
