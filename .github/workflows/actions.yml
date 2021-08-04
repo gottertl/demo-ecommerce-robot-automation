@@ -29,7 +29,7 @@ jobs:
       run: |
         sudo python -m pip install --upgrade pip
         sudo pip install -r requirements.txt
-        rfbrowser init
+        sudo rfbrowser init
     - name: Test
       run: |
         robot -d ./logs -v HEADLESS:true tests\
