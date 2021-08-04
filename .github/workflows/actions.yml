@@ -32,6 +32,4 @@ jobs:
         sudo rfbrowser init
     - name: Test
       run: |
-        sudo ls ~/usr/local/lib/python3.8/dist-packages/Browser/wrapper/node_modules/playwright/.local-browsers/chromium-901522/chrome-linux/chrome
-        sudo ls ~/.cache/ms-playwright
         sudo robot -d ./logs -v HEADLESS:true tests\
