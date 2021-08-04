@@ -32,4 +32,4 @@ jobs:
         sudo rfbrowser init
     - name: Test
       run: |
-        robot -d ./logs -v HEADLESS:true tests\
+        sudo robot -d ./logs -v HEADLESS:true tests\
