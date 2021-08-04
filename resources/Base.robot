@@ -13,7 +13,7 @@ ${BROWSER}              chromium
 
 *** Keywords ***
 Setup
-    New Browser         ${BROWSER}      False
+    New Browser         ${BROWSER}      ${HEADLESS}
     New Page            ${URL}
 
 Teardown
