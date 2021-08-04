@@ -29,7 +29,7 @@ jobs:
       run: |
         sudo python -m pip install --upgrade pip
         sudo pip install -r requirements.txt
-        sudo mkdir /usr/local/lib/python3.8/dist-packages/Browser/wrapper/node_modules/playwright/.local-browsers/chromium-901522/chrome-linux/chrome
+        sudo npm install -D playwright
         sudo rfbrowser init
     - name: Test
       run: |
