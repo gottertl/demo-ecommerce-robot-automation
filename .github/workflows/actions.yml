@@ -29,8 +29,9 @@ jobs:
       run: |
         sudo python -m pip install --upgrade pip
         sudo pip install -r requirements.txt
-        sudo bash
-        rfbrowser init
+        sudo npm install -D playwright
+        sudo npx playwright install
+        sudo rfbrowser init
     - name: Test
       run: |
         sudo robot -d ./logs -v HEADLESS:true tests\
