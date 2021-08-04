@@ -27,11 +27,9 @@ jobs:
         sudo apt-get install -y nodejs
     - name: Install dependencies
       run: |
-        sudo python -m pip install --upgrade pip
-        sudo pip install -r requirements.txt
-        sudo npm install -D playwright
-        sudo npx playwright install
-        sudo rfbrowser init
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        rfbrowser init
     - name: Test
       run: |
-        sudo robot -d ./logs -v HEADLESS:true tests\
+        robot -d ./logs -v HEADLESS:true tests\
